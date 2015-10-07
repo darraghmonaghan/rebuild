@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
   end
 
   def create
-    @user = User.confirm(params[:user])
+    @user = User.confirm(params)
     if @user
       login(@user)
       redirect_to "/users/#{@user.id}"
