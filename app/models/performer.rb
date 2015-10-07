@@ -10,4 +10,7 @@ class Performer < ActiveRecord::Base
      has_attached_file :image3, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
      validates_attachment_content_type :image3, content_type: /\Aimage\/.*\Z/
 
+     scope :category_id, -> (category_id) {where category_id: category_id }
+     
+
 end
