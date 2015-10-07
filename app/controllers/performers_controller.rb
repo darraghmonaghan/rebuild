@@ -8,8 +8,9 @@ class PerformersController < ApplicationController
   end
 
   def create
-    @performer = current_user.performers.new(performer_params)
-    # @performer = Performer.create(performer_params)
+    # @performer = current_user.performer.new(performer_params)
+    @performer = Performer.new(performer_params)
+    @performer.user_id = current_user.id
     # @user = current_user.performer_id << @performer.id
       if @performer.save
         flash[:success] = "Welcome!"
@@ -24,6 +25,7 @@ class PerformersController < ApplicationController
     # need to connect user's performer_id and the performer id fields
     @performer = Performer.find_by_id(params[:id])
     @category = Category.find_by_id(@performer.category_id)
+    @user = User.find_by_id(@performer.user_id)
     @video1 = @performer.video1
 
   end
@@ -52,6 +54,6 @@ class PerformersController < ApplicationController
   private
 
   def performer_params
-    params.require(:performer).permit(:performer_name, :performer_email, :city, :category_id, :subcategory, :hourly_rate, :description, :image1, :image2, :image3, :video1, :video2, :video3)
+    params.require(:performer).permit(:user_id, :performer_name, :performer_email, :city, :category_id, :subcategory, :hourly_rate, :description, :image1, :image2, :image3, :video1, :video2, :video3)
   end
 end
