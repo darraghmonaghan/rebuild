@@ -6,9 +6,14 @@ class UsersController < ApplicationController
   end
 
   def show
-       id = params[:id]
+      id = params[:id]
+
       @user = User.find(params[:id])
-      render :show
+      if current_user.id == @user.id
+        render :show
+      else
+        redirect_to root_path
+      end
   end
 
   def new
@@ -16,7 +21,6 @@ class UsersController < ApplicationController
   end
 
   def create
-      # user_params = params.require(:user).permit(:first_name, :last_name, :email, :password, :performer, :avatar_file_name, :avatar_content_type, :avatar_file_size, :avatar_updated_at)
       @user = User.create(user_params)
       if @user.performer && @user.save
           login(@user)
