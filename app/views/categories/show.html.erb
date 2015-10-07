@@ -1,2 +1,25 @@
-<h1>Category#show</h1>
-<p>Find me in app/views/category/show.html.erb</p>
+<div class="container">
+	<h1>Browse all <%= @category.category %>s! </h1>
+
+	<% @performer.each do |performer| %>
+		<div class="jumbotron">
+			<div>
+				<!-- Need to figure out thumbnail image display here -->
+			</div>
+			<div>
+				<%= performer.performer_name %>
+				<br>
+				<%= performer.description %>
+				<br>
+				<%= performer.subcategory %>
+			</div>
+			<div>
+				<%= performer.hourly_rate %>
+			</div>
+			<div class="btn btn-primary" role="button">
+				<%= link_to "View Full Profile", performer_path(performer.id) %>
+			</div>
+		</div>
+	<% end %>	
+
+</div>

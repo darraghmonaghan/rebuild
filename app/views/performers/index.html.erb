@@ -1,2 +1,29 @@
-<h1>Performer#index</h1>
-<p>Find me in app/views/performer/index.html.erb</p>
+<div class="container">
+	<h1>View All Performers</h1>
+	<div>
+<!-- 		<select name="category_id" id="category_id">
+			 <option value="1">Musical Acts</option>
+			 <option value="2">Comedy Acts</option>
+			 <option value="3">Circus Acts</option>
+		</select>
+	</div> -->
+
+	<% @performers.each do |performer| %>
+	
+		<div>
+			<h2> <%= performer.performer_name %></h2>
+
+			<p>
+			City: <%= performer.city %>
+			<br>
+			Category: <%= performer.category_id %>
+			<br>
+			Subcategory: <%= performer.subcategory %>
+			<br>
+			Price: <%= performer.hourly_rate %>
+			<br>
+			Description: <%= performer.description %></p>
+		</div>
+
+	<% end %>
+</div>
