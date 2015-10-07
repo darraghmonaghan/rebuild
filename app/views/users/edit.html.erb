@@ -1,2 +1,12 @@
-<h1>User#edit</h1>
-<p>Find me in app/views/user/edit.html.erb</p>
+<h1>Edit User</h1>
+
+  <div class="form-group">
+    <%= form_for @user do |f| %>
+	<%= f.email_field :email, placeholder: 'Email', required: true %></br> 
+    <%= f.text_field :first_name, placeholder: 'First Name', required: true %><br>
+    <%= f.text_field :last_name, placeholder: 'Last Name', required: true %><br>
+    <%= f.password_field :password, placeholder: 'Password', required: true %><br>
+	<%= f.check_box(:performer) %></br>
+  </div>
+  <%= f.submit "edit" %>
+ <% end %>
