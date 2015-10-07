@@ -6,7 +6,8 @@ Rails.application.routes.draw do
 
   post 'sessions/create'
 
-  delete 'sessions/destroy'
+
+  delete '/sessions', to: "sessions#destroy"
 
   resources :categories
 

@@ -32,7 +32,7 @@ class PerformersController < ApplicationController
 
   def edit
     @performer = Performer.find(params[:id])
-        if @performer.id == current_performer.id
+        if current_user.id  == @performer.user_id
             render :edit
         else
             redirect_to root_path

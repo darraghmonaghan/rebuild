@@ -16,13 +16,24 @@
 			<p>
 			City: <%= performer.city %>
 			<br>
-			Category: <%= performer.category_id %>
+			Category: 
+
+			<% if performer.category_id == 1 %>
+				<%= "Musical Act" %>
+			<% elsif performer.category_id == 2 %>
+				<%= "Comedy Act" %>
+			<% else %>
+				<%= "Circus Act" %>
+			<% end %>
+
 			<br>
 			Subcategory: <%= performer.subcategory %>
 			<br>
 			Price: <%= performer.hourly_rate %>
 			<br>
 			Description: <%= performer.description %></p>
+
+			<%= button_to "Performer profile", performer_path(performer.id), method: "get" %>
 		</div>
 
 	<% end %>
