@@ -33,14 +33,18 @@ def show
 
   def edit
     @user = User.find(params[:id])
-    render :edit
+    if @user.id == current_user.id
+      render :edit
+    else
+      redirect_to root_path
+    end
   end
 
   def update
       user_id = params[:id]
       user = User.find(user_id)
       # get updated data
-      updated_attributes = params.require(:user).permit(:first_name, :last_name)
+      updated_attributes = params.require(:user).permit(:first_name, :last_name, :email, :password)
       # update the client
       user.update_attributes(updated_attributes)
       user.save(validate: false)
@@ -56,5 +60,5 @@ end
 private
 
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :email, :password_digest, :performer)
+    params.require(:user).permit(:first_name, :last_name, :email, :password, :performer)
 end
