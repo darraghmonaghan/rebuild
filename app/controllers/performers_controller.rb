@@ -1,7 +1,6 @@
 class PerformersController < ApplicationController
   def index
     @performers = Performer.all
-    @performers = Performer.search(params[:search] unless params][:search].blank?
   end
 
   def new
