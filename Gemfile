@@ -31,7 +31,7 @@ gem 'bootstrap-sass', '~> 3.3.5'
 #ffaker gem to seed
 gem 'ffaker'
 
-gem 'devise', '~> 3.5.2'
+# gem 'devise', '~> 3.5.2'
 
 
 # Use Unicorn as the app server

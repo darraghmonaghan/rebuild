@@ -1,10 +1,113 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
-
+Category.destroy_all
+User.destroy_all
+Performer.destroy_all
 
 categories = Category.create([ { category: 'Musical Act' }, { category: 'Comedy Act' }, { category: 'Circus Act' }])
+
+    User.create(
+        first_name: FFaker::Name::first_name,
+        last_name: FFaker::Name::last_name,
+        email: FFaker::Internet::free_email,
+        password: "password",
+        performer: true
+    )
+    Performer.create(
+        user_id: 1,
+        performer_name: FFaker::Name::name,
+        performer_email: FFaker::Internet::free_email,
+        hourly_rate: "$100",
+        city: "San Francisco",
+        category_id: 1,
+        subcategory: FFaker::Job.title,
+        description: "Hello hhhhhhhhhhhh tttttttttttt rrrrrrrrrrr sssssssss vvvvvvvvv xxxxxxxxx bbbbbbbbbb mmmmmmmmmm",
+        video1: "https://www.youtube.com/watch?v=xplEPT5I39E",
+        video2: "https://www.youtube.com/watch?v=FdRA5Q5-dgU",
+        video3: "https://www.youtube.com/watch?v=OTaKFMM3dpw"
+    )
+
+
+    User.create(
+        first_name: FFaker::Name::first_name,
+        last_name: FFaker::Name::last_name,
+        email: FFaker::Internet::free_email,
+        password: "password",
+        performer: true
+    )
+    Performer.create(
+        user_id: 2,
+        performer_name: FFaker::Name::name,
+        performer_email: FFaker::Internet::free_email,
+        hourly_rate: "$100",
+        city: "San Francisco",
+        category_id: 1,
+        subcategory: FFaker::Job.title,
+        description: "Hello hhhhh88888888888 000000000000 MMMMMMMMMMMMMM TTTTTTTTTTrrrrrr bbbbbbbbbb mmmmmmmmmm",
+        video1: "https://www.youtube.com/watch?v=6Jh2n5ki0KE",
+        video2: "https://www.youtube.com/watch?v=GIYEGDJoluc",
+        video3: "https://www.youtube.com/watch?v=RBumgq5yVrA"
+    )
+
+
+    User.create(
+        first_name: FFaker::Name::first_name,
+        last_name: FFaker::Name::last_name,
+        email: FFaker::Internet::free_email,
+        password: "password",
+        performer: true
+    )
+    Performer.create(
+        user_id: 3,
+        performer_name: FFaker::Name::name,
+        performer_email: FFaker::Internet::free_email,
+        hourly_rate: "$100",
+        city: "San Francisco",
+        category_id: 2,
+        subcategory: FFaker::Job.title,
+        description: "Hello hhhhhhhhhhhh 5555555555555555 UUUUUUrrrrrQQQQQQvvvvvvv bbbbbbbb mmmmmmmmmm",
+        video1: "https://www.youtube.com/watch?v=pnv5iKB2hl4",
+        video2: "https://www.youtube.com/watch?v=1X7fZoDs9KU",
+        video3: "https://www.youtube.com/watch?v=RBumgq5yVrA"
+    )
+
+
+    User.create(
+        first_name: FFaker::Name::first_name,
+        last_name: FFaker::Name::last_name,
+        email: FFaker::Internet::free_email,
+        password: "password",
+        performer: true
+    )
+    Performer.create(
+        user_id: 4,
+        performer_name: FFaker::Name::name,
+        performer_email: FFaker::Internet::free_email,
+        hourly_rate: "$100",
+        city: "San Francisco",
+        category_id: 2,
+        subcategory: FFaker::Job.title,
+        description: "Hello hhhhhhhhhhhh TEST TEST TEST TEST TEST bbbbbbbbbb mmmmmmmmmm",
+        video1: "https://www.youtube.com/watch?v=pzN4WGPC4kc",
+        video2: "https://www.youtube.com/watch?v=apbSsILLh28",
+        video3: "https://www.youtube.com/watch?v=RBumgq5yVrA"
+    )
+
+    User.create(
+        first_name: FFaker::Name::first_name,
+        last_name: FFaker::Name::last_name,
+        email: FFaker::Internet::free_email,
+        password: "password",
+        performer: true
+    )
+    Performer.create(
+        user_id: 5,
+        performer_name: FFaker::Name::name,
+        performer_email: FFaker::Internet::free_email,
+        hourly_rate: "$100",
+        city: "San Francisco",
+        category_id: 3,
+        subcategory: FFaker::Job.title,
+        description: "Hello hhhhhhhhhhhh tttttttttttt rrrrrrrrrrr sssssssss vvvvvvvvv xxxxxxxxx bbbbbbbbbb mmmmmmmmmm",
+        video1: "https://www.youtube.com/watch?v=DZeIZbxK50w",
+        video2: "https://www.youtube.com/watch?v=hT_nvWreIhg",
+        video3: "https://www.youtube.com/watch?v=RBumgq5yVrA"
+    )

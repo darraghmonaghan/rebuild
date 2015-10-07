@@ -44,7 +44,7 @@ def show
       user_id = params[:id]
       user = User.find(user_id)
       # get updated data
-      updated_attributes = params.require(:user).permit(:first_name, :last_name, :email, :password_digest)
+      updated_attributes = params.require(:user).permit(:first_name, :last_name, :email, :password)
       # update the client
       user.update_attributes(updated_attributes)
       user.save(validate: false)
@@ -60,5 +60,5 @@ end
 private
 
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :email, :password_digest, :performer)
+    params.require(:user).permit(:first_name, :last_name, :email, :password, :performer)
 end
