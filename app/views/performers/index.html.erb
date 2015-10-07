@@ -9,10 +9,11 @@
 	</div>
 
 	<% @performers.each do |performer| %>
-	
+		<div>
+			<%= image_tag(performer.perfavatar) %>
+		</div>
 		<div>
 			<h2> <%= performer.performer_name %></h2>
-
 			<p>
 			City: <%= performer.city %>
 			<br>

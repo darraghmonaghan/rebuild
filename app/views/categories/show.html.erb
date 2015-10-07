@@ -4,7 +4,7 @@
 	<% @performer.each do |performer| %>
 		<div class="jumbotron">
 			<div>
-				<!-- Need to figure out thumbnail image display here -->
+				<%= image_tag(performer.perfavatar) %>
 			</div>
 			<div>
 				<%= performer.performer_name %>
