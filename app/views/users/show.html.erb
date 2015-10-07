@@ -1,2 +1,53 @@
-<h1>User#show</h1>
-<p>Find me in app/views/user/show.html.erb</p>
+<div class="profile container">
+  <div class="row">
+    <div class="col-md-8 col-xs-10">
+      <div class="well panel panel-default">
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-xs-12 col-sm-4 text-center">
+              <img src="http://placekitten.com.s3.amazonaws.com/homepage-samples/300/300.jpg" alt="" class="center-block img-circle img-thumbnail img-responsive">
+            </div>
+            <h1>Welcome, <%= @user.first_name %></h1>
+
+            <p><strong>Member since: </strong><%= @user.created_at %></p>
+            <p><strong></p>Nam id porttitor turpis</strong>
+            <span class="label label-info tags">here</span>
+          </p>
+        </div>
+        <!-- col -->
+        <div class="clearfix"></div>
+          <div class="col-xs-12 col-sm-4">
+            
+            
+            
+          </div>
+        <!-- col -->
+            <!--/col-->
+            <div class="col-xs-12 col-sm-4">
+            <button type="button" class="btn btn-warning"><%= link_to "Logout", sessions_destroy_path, method: :delete %></button>
+            <button type="button" class="btn btn-warning"><%= link_to "Edit", edit_user_path, method: :get %></button>
+
+            </div>
+            <!--/col-->
+          </div>
+          <!--/row-->
+        </div>
+        <!--/panel-body-->
+      </div>
+      <!--/panel-->
+    </div>
+    <!--/col--> 
+  </div>
+  <!--/row--> 
+</div>
+<!--/container-->
+
+
+
+
+
+
+
+
+
+

@@ -16,7 +16,11 @@ def show
 
   def create
     @user = User.create(user_params)
-    if @user.save
+    if @user.performer && @user.save
+      login(@user)
+      redirect_to new_performer_path
+    elsif @user.save
+      login(@user)
       flash[:success] = "Welcome!"
       redirect_to("/users/#{@user.id}")
     else
@@ -52,5 +56,5 @@ end
 private
 
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :email, :password)
+    params.require(:user).permit(:first_name, :last_name, :email, :password_digest, :performer)
 end

@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 20151007020314) do
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
     t.string   "performer_name"
+    t.integer  "user_id"
     t.string   "image1_file_name"
     t.string   "image1_content_type"
     t.integer  "image1_file_size"
@@ -54,7 +55,6 @@ ActiveRecord::Schema.define(version: 20151007020314) do
     t.string   "password_digest"
     t.string   "first_name"
     t.string   "last_name"
-    t.integer  "performer_id"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.boolean  "performer",           default: false

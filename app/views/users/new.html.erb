@@ -1,2 +1,26 @@
 <h1>User#new</h1>
 <p>Find me in app/views/user/new.html.erb</p>
+
+
+<div id="main-container" class="container">
+  <div class="row">
+    <div id="sidebar" class="col-xs-3">
+      <!-- sidebar content -->
+    </div>
+      <div id="content" class="col-xs-9">
+        
+        <%= form_for @user do |f| %> 
+          <p>
+            <%= f.email_field :email, placeholder: 'Email', required: true %></br>
+            <%= f.text_field :first_name, placeholder: 'First Name', required: true %></br>
+            <%= f.text_field :last_name, placeholder: 'Last Name', required: true %><br>
+            <%= f.password_field :password_digest, placeholder: 'Password', required: true %><br>
+            <%= f.check_box(:performer) %></br>
+   
+            <%= f.submit "Signup!" %>
+          </p>
+ 
+          <% end %>
+        </div>
+    </div>
+</div> 
