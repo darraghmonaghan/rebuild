@@ -16,7 +16,6 @@ class UsersController < ApplicationController
   end
 
   def create
-    binding.pry
       # user_params = params.require(:user).permit(:first_name, :last_name, :email, :password, :performer, :avatar_file_name, :avatar_content_type, :avatar_file_size, :avatar_updated_at)
       @user = User.create(user_params)
       if @user.performer && @user.save
