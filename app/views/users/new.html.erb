@@ -15,8 +15,10 @@
             <%= f.text_field :first_name, placeholder: 'First Name', required: true %></br>
             <%= f.text_field :last_name, placeholder: 'Last Name', required: true %><br>
             <%= f.password_field :password, placeholder: 'Password', required: true %><br>
-            <%= f.check_box(:performer) %></br>
-   
+            <%= f.file_field :avatar, class: "form-control title_input_field2" %>
+            <div>
+            Tick box if you are a performer<%= f.check_box(:performer) %></br>
+            </div>
             <%= f.submit "Signup!" %>
           </p>
  

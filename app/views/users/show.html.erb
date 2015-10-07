@@ -5,7 +5,7 @@
         <div class="panel-body">
           <div class="row">
             <div class="col-xs-12 col-sm-4 text-center">
-              <img src="http://placekitten.com.s3.amazonaws.com/homepage-samples/300/300.jpg" alt="" class="center-block img-circle img-thumbnail img-responsive">
+            <%= image_tag @user.avatar.url(:thumb) %>
             </div>
             <h1>Welcome, <%= @user.first_name %></h1>
 
