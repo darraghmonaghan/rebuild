@@ -34,6 +34,10 @@
 			<br>
 			Description: <%= performer.description %></p>
 
+			<% if current_user %>
+				<strong>Email:</strong> <%= performer.performer_email %>
+		    <% end %>
+
 			<%= button_to "Performer profile", performer_path(performer.id), method: "get" %>
 		</div>
 
