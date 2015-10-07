@@ -1,2 +1,53 @@
-<h1>Performer#new</h1>
-<p>Find me in app/views/performer/new.html.erb</p>
+<h1>Ready to get out there and make some $$$?</h1>
+<h2>Sign up now!</h2>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In non posuere nisi. Vivamus ut ipsum dolor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Fusce tortor odio, mattis in nunc non, ornare varius enim. Aenean ultricies ante suscipit eros scelerisque, nec rhoncus sem tempor.</p>
+
+<%= form_for @performer do |f| %>
+	<div>
+		<%= f.text_field :performer_name, placeholder: "Your name or group name", required: true %>
+	</div>
+	<div>
+		<%= f.email_field :performer_email, placeholder: "Your business email address", required: true %>
+	</div>
+	<div>
+		<%= f.text_field :city, placeholder: "Where are you?", required: true %>
+	</div>
+	<div>
+		<!-- I've put some this information in the seeds.rb file as well - HS -->
+		<%= f.select :category_id, [['Musical Act', 1], ['Comedy Act', 2], ['Circus Act', 3]], required: true, class: "dropdown-menu" %>
+	</div>
+	<div>
+		<%= f.text_field :subcategory, placeholder: "Your act type", required: true %>
+	</div>
+	<div>
+		<%= f.select :hourly_rate, [['$1-25 per hour', '$1-25 per hour'], ['$26-50 per hour', '$26-50 per hour'], ['$51-75 per hour', '$51-75 per hour'], ['$76-100 per hour', '$76-100 per hour'], ['$101-150 per hour', '$101-150 per hour']], required: true %>
+	</div>
+	<div>
+		<%= f.text_area :description, placeholder: "Describe your act for us! Min. 30, max. 500 characters.", required: true, cols: 50, rows: 6 %>
+	</div>
+	<div>
+		<%= f.file_field :image1, class: "form-control title_input_field2" %>
+	</div>
+	<div>
+		<%= f.file_field :image2, class: "form-control title_input_field2" %>
+	</div>
+	<div>
+		<%= f.file_field :image3, class: "form-control title_input_field2" %>
+	</div>
+
+	<div>
+		<%= f.text_field :video1, placeholder: "Enter a URL link from YouTube" %>
+	</div>
+
+	<div>
+		<%= f.text_field :video2, placeholder: "Enter a URL link from YouTube" %>
+	</div>
+
+	<div>
+		<%= f.text_field :video3, placeholder: "Enter a URL link from YouTube" %>
+	</div>
+
+	<div>
+		<%= f.submit "Sign Up Your Act!" %>
+	</div>
+<% end %>
