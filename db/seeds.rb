@@ -117,6 +117,6 @@ categories = Category.create([ { category: 'Musical Act' }, { category: 'Comedy 
             last_name: FFaker::Name::last_name,
             email: FFaker::Internet::free_email,
             password: "password",
-            performer: true
+            performer: false
         ) 
     end
