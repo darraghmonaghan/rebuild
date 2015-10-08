@@ -16,16 +16,23 @@ module SessionsHelper
   end
 
   def correct_user(performer)
-    if current_user.id == performer.user_id
-      return true 
-    else 
-      return false
-    end
+    puts "PERFORMER: " , @performer.inspect
+    # if current_user.id == @performer.user_id
+    #   return true 
+    # else 
+    #   return false
+    # end
   end
 
   private
   def current_user 
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
-  
+
+  def current_performer_id
+    Performer.where(user_id: current_user.id)
+    
+    
+  end
+
 end
