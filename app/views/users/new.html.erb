@@ -1,28 +1,25 @@
-<h1>User#new</h1>
-<p>Find me in app/views/user/new.html.erb</p>
-
-
-<div id="main-container" class="container">
-  <div class="row">
-    <div id="sidebar" class="col-xs-3">
+<%= stylesheet_link_tag "users" %>
+  <div id="main-container" class="container">
+    <div class="row">
+      <div id="sidebar" class="col-xs-3">
       <!-- sidebar content -->
     </div>
       <div id="content" class="col-xs-9">
+        <div class="form-container">
+          <form class="form-signin">
+            <h2 class="form-signin-heading">Create an account</h2>
+            <%= form_for @user do |f| %> 
         
-        <%= form_for @user do |f| %> 
-          <p>
-            <%= f.email_field :email, placeholder: 'Email', required: true %></br>
-            <%= f.text_field :first_name, placeholder: 'First Name', required: true %></br>
-            <%= f.text_field :last_name, placeholder: 'Last Name', required: true %><br>
-            <%= f.password_field :password, placeholder: 'Password', required: true %><br>
-            <%= f.file_field :avatar, class: "form-control title_input_field2" %>
-            <div>
-            Tick box if you are a performer<%= f.check_box(:performer) %></br>
-            </div>
-            <%= f.submit "Signup!" %>
-          </p>
- 
-          <% end %>
+            <%= f.email_field :email, placeholder: 'Email', class: "users-new-input", required: true %></br>
+            <%= f.text_field :first_name, placeholder: 'First Name', class: "users-new-input", required: true %></br>
+            <%= f.text_field :last_name, placeholder: 'Last Name', class: "users-new-input", required: true %><br>
+            <%= f.password_field :password, placeholder: 'Password', class: "users-new-input", required: true %><br>
+            <%= f.file_field :avatar, class: "users-new-input" %></br>
+            <small>Tick box if you are a performer</small><%= f.check_box(:performer) %></br>
+            <%= f.submit "Signup!", class: "ghost-button" %>
+              <% end %>
+             </div>
         </div>
+      </div>
     </div>
 </div> 
