@@ -3,7 +3,9 @@
 	<%= link_to "Log Out", "/sessions", method: :delete %><br>
 
 	<%= link_to "Edit Profile", edit_performer_path, method: :get %>
-
+  <div>
+        <%= image_tag(@performer.perfavatar) %>
+  </div>
 	<div>
     <% if current_user %>
       <p> <%= current_user.first_name %> </p>
@@ -11,12 +13,11 @@
     <% else %>
       <strong>Email:</strong><%= "Sign Up to See This Performer Email!" %>
     <% end %>
-    <%= image_tag(@performer.perfavatar) %>
 	</div>
 	<div>
 		<h1><%= @performer.performer_name %></h1>
 		<h3><%= @performer.city %></h3>
-		<strong>Category:</strong> <%= @category %> - <%= @performer.subcategory %>
+		<strong>Category:</strong> <%= @category.category %> - <%= @performer.subcategory %>
 		<br>
 		<strong>Hourly Rate:</strong> <%= @performer.hourly_rate %>
 	</div>
