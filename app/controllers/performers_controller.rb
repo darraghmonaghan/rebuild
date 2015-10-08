@@ -24,10 +24,10 @@ class PerformersController < ApplicationController
   def show
     # need to connect user's performer_id and the performer id fields
     @performer = Performer.find_by_id(params[:id])
-    @category = Category.find_by_id(@performer.category_id)
+    id = @performer.category_id
+    @category = Category.find_by_id(id)
     @user = User.find_by_id(@performer.user_id)
     @video1 = @performer.video1
-
   end
 
   def edit
