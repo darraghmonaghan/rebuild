@@ -37,8 +37,9 @@
   height: 100%;
 }
 
-.avatar {
+#avatar {
   padding-top: 70px;
+
   padding-left: 90px;
 }
 
@@ -98,21 +99,18 @@ div.images {
   display: block;
   margin: 0 auto;
   padding: 2px;
-  
 }
 
+#cat_show_avatar {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  vertical-align: middle;
+  padding-top: 55px;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+div {
+width: 1250px;
+word-wrap: break-word;
+}
 
