@@ -9,10 +9,11 @@
 	</div>
 
 	<% @performers.each do |performer| %>
-	
+		<div>
+			<%= image_tag(performer.perfavatar) %>
+		</div>
 		<div>
 			<h2> <%= performer.performer_name %></h2>
-
 			<p>
 			City: <%= performer.city %>
 			<br>
@@ -32,6 +33,10 @@
 			Price: <%= performer.hourly_rate %>
 			<br>
 			Description: <%= performer.description %></p>
+
+			<% if current_user %>
+				<strong>Email:</strong> <%= performer.performer_email %>
+		    <% end %>
 
 			<%= button_to "Performer profile", performer_path(performer.id), method: "get" %>
 		</div>
