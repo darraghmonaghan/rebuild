@@ -14,28 +14,19 @@ class SessionsController < ApplicationController
     end
   end
 
-
-
-# def create
-#    user = User.find_by_email(params[:email])
-#    if user.authenticate(params[:password])
-#      # login user
-#      session[:user_id] = user.id
-#      # go to profile page
-#      redirect_to user_path(user)
-#    else
-#      # handle error
-#      redirect_to sessions_new_path
-#    end
-#  end
-
   def destroy
     # logout
     session[:user_id] = nil
     redirect_to root_path
   end
 
+  #################################################
+ 
 private
+
+  def performer_params
+    params.require(:performer).permit(:email, :password)  
+  end
 
   def user_params
     params.require(:user).permit(:email, :password)  

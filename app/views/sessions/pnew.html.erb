@@ -1,0 +1,7 @@
+<%= form_tag sessions_pcreate_path, method: :post do %>
+
+  <%= text_field_tag :email, nil, required: true, placeholder: "email" %>
+  <%= password_field_tag :password, nil, required: true, placeholder: "password" %>
+  <%= submit_tag "Login" %>
+
+<% end %>
