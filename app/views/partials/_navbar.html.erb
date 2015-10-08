@@ -18,16 +18,17 @@
 	      	<li><%= link_to "Browse Performers", performers_path %></li>
 	      	  	<% if current_user && (current_user.performer == true) %>
 			      	  	<li><%= link_to "Profile Page", user_path(current_user.id) %></li>
-			      	    <li><%= link_to "Logout", sessions_path, method: :delete %></li>
-			      	    <li><%= link_to "Performer Profile", performer_path(
+			      	    <li><%= link_to "Log Out", sessions_path, method: :delete %></li>
+			      	    <% if Performer.where(user_id: current_user.id) != [] %>
+			      	    	<li><%= link_to "Performer Profile", performer_path(
 			      	    	Performer.where(user_id: current_user.id).first.id
 			      	    ) %></li>
+			      	    <% end %>
 	      	  	<p> <%= 			      	    	
 %> </p>
-
 	      	  	<% elsif current_user && (current_user.performer == false) %>
 			      	  	<li><%= link_to "Profile Page", user_path(current_user.id) %></li>
-			      	    <li><%= link_to "Logout", sessions_path, method: :delete %></li>
+			      	    <li><%= link_to "Log Out", sessions_path, method: :delete %></li>
 	      	  	<% else %>
 		     			 <li><%= link_to "Sign Up", "/users/new" %></li>
 		     			 <li><%= link_to "Login", "/sessions/new" %></li>
