@@ -15,9 +15,24 @@ module SessionsHelper
     @current_user = session[:user_id] = nil
   end
 
+  def correct_user(performer)
+    puts "PERFORMER: " , @performer.inspect
+    # if current_user.id == @performer.user_id
+    #   return true 
+    # else 
+    #   return false
+    # end
+  end
+
   private
   def current_user 
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
-  
+
+  def current_performer_id
+    Performer.where(user_id: current_user.id)
+    
+    
+  end
+
 end

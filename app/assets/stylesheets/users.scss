@@ -1,3 +1,124 @@
 // Place all the styles related to the user controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+li {
+  list-style: none;
+}
+
+.form-container {
+  width: 50%;
+  text-align: center;
+  margin-left: 10%;
+  padding-bottom: 10%;
+ 
+}
+
+form#new_performer {
+  
+  width: 70%;
+
+}
+
+h2.form-signin-heading {
+  margin: 5%;
+  color: #009688;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.users-new-input {
+margin: 3%;
+padding: 4px;
+width: 240px;
+  
+}
+input#user_performer {
+  width: 50px;
+}
+
+input#user_avatar {
+  width: 50%;
+  margin: 3%;
+  display: inline-block;
+  width: 230px;
+}
+
+
+.ghost-button {
+  color: #009688;
+  background: #fff;
+  border: 1px solid #009688;
+  font-size: 17px;
+  padding: 7px 12px;
+  font-weight: normal;
+  margin: 6px 0;
+  margin-right: 12px;
+  display: inline-block;
+  text-decoration: none;
+  font-family: 'Open Sans', sans-serif;
+  min-width: 120px;
+}
+
+
+form-control title_input_field2 {
+  margin-right: 5px;
+
+}
+
+.newperformercontent {
+  padding: 3px;
+  width: 70%;
+  text-align: center;
+  padding: 3%;
+  display: block;
+  float: right;
+  
+}
+
+.make-some-money {
+  width: 70%;
+  color: #009688;
+}
+
+
+ textarea#performer_description {
+  font-family: 'Open Sans', sans-serif;
+  margin: 3%;
+  padding: 5px;
+  width: 70%;
+ }
+
+ .dropdown_menu {
+ display: inline-block;
+ }
+
+ .image-upload {
+  width: 70%;
+  margin: 0px;
+ }
+
+ .media {
+  display: inline;
+ }
+
+ .youtube {
+  width: 70%;
+  padding: 3px;
+  margin: 5px;
+ }
+
+ div#sidebar {
+    padding: 0;
+     margin: 0;
+     display: block;
+     border: 1px solid white;
+     position: fixed;
+
+ }
+
+
+
+
+
+
+

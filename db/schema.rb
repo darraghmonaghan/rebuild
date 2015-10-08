@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151007020314) do
+ActiveRecord::Schema.define(version: 20151007224742) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,8 +29,8 @@ ActiveRecord::Schema.define(version: 20151007020314) do
     t.string   "subcategory"
     t.string   "hourly_rate"
     t.string   "description"
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
     t.string   "performer_name"
     t.integer  "user_id"
     t.string   "image1_file_name"
@@ -48,6 +48,10 @@ ActiveRecord::Schema.define(version: 20151007020314) do
     t.string   "video1"
     t.string   "video2"
     t.string   "video3"
+    t.string   "perfavatar_file_name"
+    t.string   "perfavatar_content_type"
+    t.integer  "perfavatar_file_size"
+    t.datetime "perfavatar_updated_at"
   end
 
   create_table "users", force: :cascade do |t|
