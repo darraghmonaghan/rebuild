@@ -6,6 +6,7 @@
 
 	<div>
     <% if current_user %>
+      <p> <%= current_user.first_name %> </p>
 		  <strong>Email:</strong> <%= @performer.performer_email %>
     <% else %>
       <strong>Email:</strong><%= "Sign Up to See This Performer Email!" %>
