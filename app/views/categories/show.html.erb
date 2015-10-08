@@ -2,22 +2,18 @@
 	<h1>Browse all <%= @category.category %>s! </h1>
 
 	<% @performer.each do |performer| %>
-		<div class="jumbotron">
-			<div>
-				<%= image_tag(performer.perfavatar) %>
+		<div class="row panel panel-default">
+			<div class='col-sm-10 col-md-3'>
+				<%= image_tag(performer.perfavatar, id: "cat_show_avatar") %>
 			</div>
-			<div>
-				<%= performer.performer_name %><br>
+			<div class='col-sm-10 col-md-9'>
+				<h4><%= performer.performer_name %></h4>
+				<strong><%= performer.subcategory %></strong><br>
 				<%= performer.description %><br>
-				<%= performer.subcategory %>
+				<strong><%= performer.hourly_rate %></strong>
+				<%= button_to "View Full Profile", performer_path(performer.id), method: "get", class: "btn btn-primary" %>
+			</div>
 
-			</div>
-			<div>
-				<%= performer.hourly_rate %>
-			</div>
-			<div class="btn btn-primary" role="button">
-				<%= link_to "View Full Profile", performer_path(performer.id) %>
-			</div>
 		</div>
 	<% end %>	
 
