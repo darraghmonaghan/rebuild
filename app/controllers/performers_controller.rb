@@ -49,6 +49,14 @@ class PerformersController < ApplicationController
     end
 
   def destroy
+    if current_user.id  == @performer.user_id
+      id = params[:id]
+      performer = Performer.find(id)
+      performer.destroy  
+    else
+      redirect_to root_path
+  end
+
   end
 
   private

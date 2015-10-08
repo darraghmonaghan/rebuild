@@ -27,6 +27,8 @@
             <button type="button" class="btn btn-warning"><%= link_to "Logout", "/sessions", method: :delete %></button>
             <button type="button" class="btn btn-warning"><%= link_to "Edit", edit_user_path, method: :get %></button>
 
+            <%= button_to "Delete", user_path, method: :delete %>
+
             </div>
             <!--/col-->
           </div>

@@ -1,78 +1,52 @@
-<div class="container">
-	<div class="well well-lg">
-		<h1>Sign Up to Become a Performer</h1>
 
-		<p>Sign up as a performer with ...! Add pictures and videos to your profile for maximum visibility. Your profile will be viewable by thousands of potential clients in your area! Sign up, sit back, and wait for the gigs to start rolling in.</p>
+<%= stylesheet_link_tag "users" %>
+ <div id="main-container" class="container">
+  
+    <div class="col-xs-3">
+			<h2 class="make-some-money">Sign up now!</h2>
+			<p>	Lorem ipsum dolor sit amet, consectetur adipiscing elit. In non posuere nisi. Vivamus ut ipsum dolor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Fusce tortor odio, mattis in nunc non, ornare varius enim. Aenean ultricies ante suscipit eros scelerisque, nec rhoncus sem tempor.</p>
+    </div>
+ 		<div id="content" class="col-xs-9 newperformercontent">
+
+
+			<h1 class="make-some-money">Ready to get out there and make some $$$?</h1>	
+   	
+			<%= form_for @performer do |f| %>
+
+			<%= f.text_field :performer_name, placeholder: "Your name or group name", class: "users-new-input", required: true %></br>
 		
-		<%= form_for @performer do |f| %>
+			<%= f.email_field :performer_email, placeholder: "Your business email address", class: "users-new-input", required: true %></br>
+		
+			<%= f.text_field :city, placeholder: "Where are you?", class: "users-new-input", required: true %></br>
 
-		<div class="form-group">
-			<%= f.text_field :performer_name, placeholder: "Your name or group name", required: true, class: "form-control" %>
-		</div>
+				<%= f.text_field :subcategory, placeholder: "Your act type", class: "users-new-input", required: true %></br>
 
-		<div class="form-group">
-			<%= f.email_field :performer_email, placeholder: "Your business email address", required: true, class: "form-control" %>
-		</div>
-
-		<div class="form-group">
-			<%= f.text_field :city, placeholder: "Where are you?", required: true, class: "form-control" %>
-		</div>
-
-		<div class="form-group">
-			<p class="help-block">What is your act type?</p>
+				<%= f.text_area :description, placeholder: "Describe your act for us! Min. 30, max. 500 characters.", required: true, cols: 50, rows: 6 %>
+		<div class="dd-menus">
+				<!-- I've put some this information in the seeds.rb file as well - HS -->
 			<%= f.select :category_id, [['Musical Act', 1], ['Comedy Act', 2], ['Circus Act', 3]], required: true, class: "dropdown-menu" %>
+
+			<%= f.select :hourly_rate, [['$1-25 per hour', '$1-25 per hour'], ['$26-50 per hour', '$26-50 per hour'], ['$51-75 per hour', '$51-75 per hour'], ['$76-100 per hour', '$76-100 per hour'], ['$101-150 per hour', '$101-150 per hour']], required: true, class: "dropdown-menu" %></br>
+		</div>
+		<div class ="media">
+		 <div class="image-upload">
+				<%= f.file_field :perfavatar, class: "users-new-input" %></br>
+				<%= f.file_field :image1, class: "users-new-input" %></br>
+
+				<%= f.file_field :image2, class: "users-new-input" %></br>
+
+				<%= f.file_field :image3, class: "users-new-input" %></br>
+		  </div>
+			<div class="youtube">
+					<%= f.text_field :video1, placeholder: "Enter a URL link from YouTube", class: "users-new-input" %>
+				  <%= f.text_field :video2, placeholder: "Enter a URL link from YouTube", class: "users-new-input" %>
+				 <%= f.text_field :video3, placeholder: "Enter a URL link from YouTube", class: "users-new-input" %>
+			</div>
 		</div>
 
-		<div class="form-group">
-			<%= f.text_field :subcategory, placeholder: "Your act type", required: true, class: "form-control" %>
-		</div>
-
-		<div class="form-group">
-			<p class="help-block">What is your hourly rate?</p>
-			<%= f.select :hourly_rate, [['$1-25 per hour', '$1-25 per hour'], ['$26-50 per hour', '$26-50 per hour'], ['$51-75 per hour', '$51-75 per hour'], ['$76-100 per hour', '$76-100 per hour'], ['$101-150 per hour', '$101-150 per hour']], required: true, class: "dropdown-menu" %>
-		</div>
-
-		<div class="form-group">
-			<%= f.text_area :description, placeholder: "Describe your act for us! Min. 30, max. 500 characters.", required: true, cols: 80, rows: 4 %>
-		</div>
-
-		<div class="form-group">
-			<%= f.file_field :perfavatar %>
-			<p class="help-block">Upload your performer avatar.</p>
-		</div>
-
-		<div class="form-group">
-			<%= f.file_field :image1 %>
-			<p class="help-block">Upload your first performer image.</p>
-		</div>
-
-		<div class="form-group">
-			<%= f.file_field :image2 %>
-			<p class="help-block">Upload your second performer image.</p>
-		</div>
-
-		<div class="form-group">
-			<%= f.file_field :image3 %>
-			<p class="help-block">Upload your third performer image.</p>
-		</div>
-
-		<div class="form-group">
-			<%= f.text_field :video1, placeholder: "Enter a URL link from YouTube", class: "form-control" %>
-		</div>
-
-		<div class="form-group">
-			<%= f.text_field :video2, placeholder: "Enter a URL link from YouTube", class: "form-control" %>
-		</div>
-
-		<div class="form-group">
-			<%= f.text_field :video3, placeholder: "Enter a URL link from YouTube", class: "form-control" %>
-		</div>
-
-		<div class="form-group">
-			<%= f.submit "Sign Up Your Act!", class: "btn btn-primary" %>
-		</div>
-
-	<% end %>
-
-	</div>
+		<%= f.submit "Sign Up Your Act!", class: "ghost-button" %>
+		<% end %>
+	
+   </div>
+</div>
 </div>
