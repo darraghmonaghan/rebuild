@@ -1,12 +1,16 @@
-<h1>Edit User</h1>
+<%= stylesheet_link_tag "users" %>
+
+<div class="form-container">
+<h1 class="edit-header">Edit User</h1>
 
   <div class="form-group">
     <%= form_for @user do |f| %>
-	<%= f.email_field :email, placeholder: 'Email', required: true %></br> 
-    <%= f.text_field :first_name, placeholder: 'First Name', required: true %><br>
-    <%= f.text_field :last_name, placeholder: 'Last Name', required: true %><br>
-    <%= f.password_field :password, placeholder: 'Password', required: true %><br>
-	<%= f.check_box(:performer) %></br>
-  </div>
-  <%= f.submit "edit" %>
+	<%= f.email_field :email, placeholder: 'Email', class: "users-new-input", required: true %></br> 
+    <%= f.text_field :first_name, placeholder: 'First Name', class: "users-new-input", required: true %><br>
+    <%= f.text_field :last_name, placeholder: 'Last Name', class: "users-new-input", required: true %><br>
+    <%= f.password_field :password, placeholder: 'Password', class: "users-new-input", required: true %><br>
+     <%= f.submit "edit", class: "ghost-button" %>
  <% end %>
+	</div>
+  </div>
+ 
