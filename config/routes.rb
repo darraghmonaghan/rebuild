@@ -15,4 +15,6 @@ Rails.application.routes.draw do
 
   resources :users
 
+  get "/about", to: "users#about"
+
 end
