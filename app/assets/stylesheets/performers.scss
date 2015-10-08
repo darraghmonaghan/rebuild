@@ -37,7 +37,14 @@
   height: 100%;
 }
 
-.avatar {
+#avatar {
   padding-top: 70px;
   padding-left: 90px;
+}
+
+#cat_show_avatar {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  vertical-align: middle
 }
