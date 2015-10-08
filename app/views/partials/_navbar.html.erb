@@ -19,7 +19,12 @@
 	      	  	<% if current_user && (current_user.performer == true) %>
 			      	  	<li><%= link_to "Profile Page", user_path(current_user.id) %></li>
 			      	    <li><%= link_to "Logout", sessions_path, method: :delete %></li>
-			      	    <li><%= link_to "Performer Profile", performer_path(current_user.id) %></li>
+			      	    <li><%= link_to "Performer Profile", performer_path(
+			      	    	Performer.where(user_id: current_user.id).first.id
+			      	    ) %></li>
+	      	  	<p> <%= 			      	    	
+%> </p>
+
 	      	  	<% elsif current_user && (current_user.performer == false) %>
 			      	  	<li><%= link_to "Profile Page", user_path(current_user.id) %></li>
 			      	    <li><%= link_to "Logout", sessions_path, method: :delete %></li>
