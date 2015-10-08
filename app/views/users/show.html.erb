@@ -1,34 +1,22 @@
 <div class="profile container">
   <div class="row">
-    <div class="col-md-8 col-xs-10">
+    <div class="col-md-10 col-xs-10">
       <div class="well panel panel-default">
         <div class="panel-body">
           <div class="row">
-            <div class="col-xs-12 col-sm-4 text-center">
-            <%= image_tag @user.avatar.url(:thumb) %>
+            <div class="col-xs-12 col-md-4 text-center">
+                <%= image_tag @user.avatar.url(:thumb) %>
             </div>
-            <h1>Welcome, <%= @user.first_name %></h1>
-
-            <p><strong>Member since: </strong><%= @user.created_at %></p>
-            <p><strong></p>Nam id porttitor turpis</strong>
-            <span class="label label-info tags">here</span>
-          </p>
-        </div>
+            <div class="col-xs-12 col-md-4">
+                <h2>Welcome, <%= @user.first_name %></h2>
+                <strong>Member since: </strong><%= @user.created_at.to_s(:due_date) %>
+            </div>
         <!-- col -->
-        <div class="clearfix"></div>
-          <div class="col-xs-12 col-sm-4">
-            
-            
-            
-          </div>
         <!-- col -->
             <!--/col-->
-            <div class="col-xs-12 col-sm-4">
-            <button type="button" class="btn btn-warning"><%= link_to "Logout", "/sessions", method: :delete %></button>
-            <button type="button" class="btn btn-warning"><%= link_to "Edit", edit_user_path, method: :get %></button>
-
-            <%= button_to "Delete", user_path, method: :delete %>
-
+            <div class="col-xs-12 col-md-4">
+                  <%= button_to "Edit", edit_user_path, method: :get, class: "btn btn-warning" %>
+                  <%= button_to "Delete", user_path, method: :delete, class: "btn btn-danger"  %>
             </div>
             <!--/col-->
           </div>
