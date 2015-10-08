@@ -15,9 +15,7 @@ li {
 }
 
 form#new_performer {
-  
   width: 70%;
-
 }
 
 h2.form-signin-heading {
@@ -108,12 +106,26 @@ form-control title_input_field2 {
  }
 
  div#sidebar {
-    padding: 0;
-     margin: 0;
-     display: block;
-     border: 1px solid white;
-     position: fixed;
+  padding: 0;
+  margin: 0;
+  display: block;
+  border: 1px solid white;
+  position: fixed;
 
+ }
+
+ .edit-form {
+ border: 2px solid red;
+ width: 70%;
+ display: block;
+ text-align: center;
+ margin: 0 auto;
+ }
+
+ .edit-header {
+  margin: 5%;
+  color: #009688;
+  font-family: 'Open Sans', sans-serif;
  }
 
 
