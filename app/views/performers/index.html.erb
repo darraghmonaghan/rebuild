@@ -11,7 +11,7 @@
 	<% @performers.each do |performer| %>
 	<div class='row panel panel-default'>
 		<div class='col-sm-10 col-md-4'>
-			<%= image_tag(performer.perfavatar) %>
+			<%= image_tag(performer.perfavatar, class: "avatar") %>
 		</div>
 		<div class='col-sm-10 col-md-8'>
 			<h2> <%= performer.performer_name %></h2>
@@ -27,7 +27,7 @@
 			<% end %><br>
 
 			<strong>Subcategory:</strong> <%= performer.subcategory %><br>
-			<strong>Price:</strong> <%= performer.hourly_rate %> / hour<br>
+			<strong>Price:</strong> <%= performer.hourly_rate %><br>
 			<strong>Description:</strong> <%= performer.description %><br>
 			<% if current_user %>
 				<strong>Performers Contact: </strong><%= performer.performer_email %><br>

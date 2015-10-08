@@ -15,11 +15,11 @@ categories = Category.create([ { category: 'Musical Act' }, { category: 'Comedy 
         user_id: 1,
         performer_name: FFaker::Name::name,
         performer_email: FFaker::Internet::free_email,
-        hourly_rate: "$100",
+        hourly_rate: "$76-100 per hour",
         city: "San Francisco",
-        category_id: 1,
+        category_id: rand(1..3),
         subcategory: FFaker::Job.title,
-        description: "Hello hhhhhhhhhhhh tttttttttttt rrrrrrrrrrr sssssssss vvvvvvvvv xxxxxxxxx bbbbbbbbbb mmmmmmmmmm",
+        description: FFaker::Lorem.paragraph,
         video1: "https://www.youtube.com/watch?v=xplEPT5I39E",
         video2: "https://www.youtube.com/watch?v=FdRA5Q5-dgU",
         video3: "https://www.youtube.com/watch?v=OTaKFMM3dpw"
@@ -37,11 +37,11 @@ categories = Category.create([ { category: 'Musical Act' }, { category: 'Comedy 
         user_id: 2,
         performer_name: FFaker::Name::name,
         performer_email: FFaker::Internet::free_email,
-        hourly_rate: "$100",
+        hourly_rate: "$51-75 per hour",
         city: "San Francisco",
-        category_id: 1,
+        category_id: rand(1..3),
         subcategory: FFaker::Job.title,
-        description: "Hello hhhhh88888888888 000000000000 MMMMMMMMMMMMMM TTTTTTTTTTrrrrrr bbbbbbbbbb mmmmmmmmmm",
+        description: FFaker::Lorem.paragraph,
         video1: "https://www.youtube.com/watch?v=6Jh2n5ki0KE",
         video2: "https://www.youtube.com/watch?v=GIYEGDJoluc",
         video3: "https://www.youtube.com/watch?v=RBumgq5yVrA"
@@ -59,16 +59,15 @@ categories = Category.create([ { category: 'Musical Act' }, { category: 'Comedy 
         user_id: 3,
         performer_name: FFaker::Name::name,
         performer_email: FFaker::Internet::free_email,
-        hourly_rate: "$100",
+        hourly_rate: "$26-50 per hour",
         city: "San Francisco",
-        category_id: 2,
+        category_id: rand(1..3),
         subcategory: FFaker::Job.title,
-        description: "Hello hhhhhhhhhhhh 5555555555555555 UUUUUUrrrrrQQQQQQvvvvvvv bbbbbbbb mmmmmmmmmm",
+        description: FFaker::Lorem.paragraph,
         video1: "https://www.youtube.com/watch?v=pnv5iKB2hl4",
         video2: "https://www.youtube.com/watch?v=1X7fZoDs9KU",
         video3: "https://www.youtube.com/watch?v=RBumgq5yVrA"
     )
-
 
     User.create(
         first_name: FFaker::Name::first_name,
@@ -81,11 +80,11 @@ categories = Category.create([ { category: 'Musical Act' }, { category: 'Comedy 
         user_id: 4,
         performer_name: FFaker::Name::name,
         performer_email: FFaker::Internet::free_email,
-        hourly_rate: "$100",
+        hourly_rate: "$1-25 per hour",
         city: "San Francisco",
-        category_id: 2,
+        category_id: rand(1..3),
         subcategory: FFaker::Job.title,
-        description: "Hello hhhhhhhhhhhh TEST TEST TEST TEST TEST bbbbbbbbbb mmmmmmmmmm",
+        description: FFaker::Lorem.paragraph,
         video1: "https://www.youtube.com/watch?v=pzN4WGPC4kc",
         video2: "https://www.youtube.com/watch?v=apbSsILLh28",
         video3: "https://www.youtube.com/watch?v=RBumgq5yVrA"
@@ -102,12 +101,22 @@ categories = Category.create([ { category: 'Musical Act' }, { category: 'Comedy 
         user_id: 5,
         performer_name: FFaker::Name::name,
         performer_email: FFaker::Internet::free_email,
-        hourly_rate: "$100",
+        hourly_rate: "101-150 per hour",
         city: "San Francisco",
-        category_id: 3,
+        category_id: rand(1..3),
         subcategory: FFaker::Job.title,
-        description: "Hello hhhhhhhhhhhh tttttttttttt rrrrrrrrrrr sssssssss vvvvvvvvv xxxxxxxxx bbbbbbbbbb mmmmmmmmmm",
+        description: FFaker::Lorem.paragraph,
         video1: "https://www.youtube.com/watch?v=DZeIZbxK50w",
         video2: "https://www.youtube.com/watch?v=hT_nvWreIhg",
         video3: "https://www.youtube.com/watch?v=RBumgq5yVrA"
     )
+
+    5.times do 
+       User.create(
+            first_name: FFaker::Name::first_name,
+            last_name: FFaker::Name::last_name,
+            email: FFaker::Internet::free_email,
+            password: "password",
+            performer: false
+        ) 
+    end
