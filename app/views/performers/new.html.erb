@@ -4,7 +4,8 @@
   
     <div class="col-xs-3">
 			<h2 class="make-some-money">Sign up now!</h2>
-			<p>	Lorem ipsum dolor sit amet, consectetur adipiscing elit. In non posuere nisi. Vivamus ut ipsum dolor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Fusce tortor odio, mattis in nunc non, ornare varius enim. Aenean ultricies ante suscipit eros scelerisque, nec rhoncus sem tempor.</p>
+			<p>	Are you an amazing juggler? Do you make all of your friends laugh at parties? Why not put those talents to use? Signup as a performer on Encore and you can connect with individuals and organizations that will pay you for your services.
+			</br></br><strong>Here's how it works:</strong> Fill out the form and upload media so that our users can see what you can do. When a user contacts you it's up to you to arrange the details! Good luck! </p>
     </div>
  		<div id="content" class="col-xs-9 newperformercontent">
 
@@ -22,14 +23,15 @@
 				<%= f.text_field :subcategory, placeholder: "Your act type", class: "users-new-input", required: true %></br>
 
 				<%= f.text_area :description, placeholder: "Describe your act for us! Min. 30, max. 500 characters.", required: true, cols: 50, rows: 6 %>
-		<div class="dd-menus">
+		<div class="drop-downs">
 				<!-- I've put some this information in the seeds.rb file as well - HS -->
+
 			<%= f.select :category_id, [['Musical Act', 1], ['Comedy Act', 2], ['Circus Act', 3]], required: true, class: "dropdown-menu" %>
 
 			<%= f.select :hourly_rate, [['$1-25 per hour', '$1-25 per hour'], ['$26-50 per hour', '$26-50 per hour'], ['$51-75 per hour', '$51-75 per hour'], ['$76-100 per hour', '$76-100 per hour'], ['$101-150 per hour', '$101-150 per hour']], required: true, class: "dropdown-menu" %></br>
 		</div>
 		<div class ="media">
-		 <div class="image-upload">
+		 <div class="images">
 				<%= f.file_field :perfavatar, class: "users-new-input" %></br>
 				<%= f.file_field :image1, class: "users-new-input" %></br>
 
