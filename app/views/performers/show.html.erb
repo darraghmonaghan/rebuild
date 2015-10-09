@@ -1,13 +1,4 @@
 <div class="container">
-  <!-- logged in logic - needs help -->
-  <div>
-    <% if correct_user(@performer) %>
-      <%= button_to "Edit Profile", edit_performer_path, method: :get %>
-      <%= button_to "Delete", performer_path, method: :delete %>
-    <% end %>
-  </div>
-  <!-- end logged in logic -->
-
 
   <div class='row panel panel-default'>
     <div class='col-sm-10 col-md-4'>
