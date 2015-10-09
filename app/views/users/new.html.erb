@@ -1,25 +1,33 @@
 <%= stylesheet_link_tag "users" %>
   <div id="main-container" class="container">
     <div class="row">
-      <div id="sidebar" class="col-xs-3">
-      <!-- sidebar content -->
-    </div>
-      <div id="content" class="col-xs-9">
+
+      <div id="content" class="col-md-12">
         <div class="form-container">
         
-            <h2 class="form-signin-heading">User Signup</h2>
+            <h2 class="form-signin-heading">Sign Up Now!</h2>
             <%= form_for @user do |f| %> 
-        
-            <%= f.email_field :email, placeholder: 'Email', class: "users-new-input", required: true %></br>
-            <%= f.text_field :first_name, placeholder: 'First Name', class: "users-new-input", required: true %></br>
-            <%= f.text_field :last_name, placeholder: 'Last Name', class: "users-new-input", required: true %><br>
-            <%= f.password_field :password, placeholder: 'Password', class: "users-new-input", required: true %></br>
-            <small>Upload an avatar picture</small></br>
-            <%= f.file_field :avatar, class: "users-new-input" %></br>
-          <div class="fine-print">
-            <small><strong>Want to be a performer?</strong></br> Tick the box once you've completed the form to go to the performer signup page.</small>
-          </div>
-            <%= f.check_box(:performer) %></br>
+            <div class="form-group">
+              <%= f.email_field :email, placeholder: 'Email', class: "form-control", required: true %>
+            </div>
+            <div class="form-group">
+              <%= f.text_field :first_name, placeholder: 'First Name', class: "form-control", required: true %>
+            </div>
+            <div class="form-group">
+              <%= f.text_field :last_name, placeholder: 'Last Name', class: "form-control", required: true %>
+            </div>
+            <div class="form-group">
+              <%= f.password_field :password, placeholder: 'Password', class: "form-control", required: true %>
+            </div>
+            <div class="form-group">
+              <%= f.file_field :avatar, class: "form-control" %>
+              <p class="help-block">Upload a user avatar!</p>
+            </div>
+            <div class="form-group">
+              <h2>Want to be a performer? <%= f.check_box(:performer) %></h2> 
+              <p class="helper-block">Tick the box once you've finished this form to go to the performer sign up page!
+              </p>
+            </div>
             <%= f.submit "Signup!", class: "ghost-button" %>
               <% end %>
              </div>
