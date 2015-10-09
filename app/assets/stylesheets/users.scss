@@ -8,8 +8,7 @@ li {
 
 .form-container {
   width: 50%;
-  text-align: center;
-  margin-left: 10%;
+  margin: 0 auto;
   padding-bottom: 10%;
  
 }
@@ -23,24 +22,6 @@ h2.form-signin-heading {
   color: #009688;
   font-family: 'Open Sans', sans-serif;
 }
-
-.users-new-input {
-margin: 3%;
-padding: 4px;
-width: 240px;
-  
-}
-input#user_performer {
-  width: 50px;
-}
-
-input#user_avatar {
-  width: 50%;
-  margin: 3%;
-  display: inline-block;
-  width: 230px;
-}
-
 
 .ghost-button {
   color: #009688;
@@ -57,25 +38,19 @@ input#user_avatar {
   min-width: 120px;
 }
 
-
-form-control title_input_field2 {
-  margin-right: 5px;
-
-}
-
 .newperformercontent {
   padding: 3px;
   width: 70%;
-  text-align: center;
   padding: 3%;
   display: block;
   float: right;
-  
+  margin-top: -35px;
 }
 
 .make-some-money {
   width: 70%;
   color: #009688;
+  margin-top: 30px;
 }
 
 

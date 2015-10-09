@@ -1,6 +1,6 @@
-<div class="profile container">
+<div class="container">
   <div class="row">
-    <div class="col-md-10 col-xs-10">
+    <div class="col-md-12 col-xs-10">
       <div class="well panel panel-default">
         <div class="panel-body">
           <div class="row">
@@ -8,7 +8,7 @@
               <div class='col-sm-10 col-md-3'>
                   <div class='row'>
                       <div class="col-md-3"></div>
-                      <div class='col-md-6'><%= image_tag(@performer.perfavatar, class: "perf_profile", id: "cat_show_avatar") %></div>
+                      <div class='col-md-6' style="padding-top:20%;"><%= image_tag(@performer.perfavatar) %></div>
                       <div class="col-md-3"></div>
                   </div>
               </div>
@@ -28,7 +28,7 @@
                 <br>
               </div> 
 
-                <!-- logged in logic - needs help -->
+                <!-- logged in logic -->
                 <div class="col-sm-10 col-md-2">
                   <% if current_user %>
                     <% if @performer.user_id == current_user.id %>

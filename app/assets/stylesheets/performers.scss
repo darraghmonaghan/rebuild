@@ -74,13 +74,6 @@ textarea#performer_description {
   min-width: 120px;
 }
 
-.users-new-input {
-margin: 2.5%;
-padding: 3px;
-width: 280px;
-  
-}
-
 .edit-performer-header {
   color: #009688;
   font-family: 'Open Sans', sans-serif;
@@ -108,12 +101,9 @@ div.images {
   padding: 2px;
 }
 
-#cat_show_avatar {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  vertical-align: middle;
-  padding-top: 55px;
+.cat_show_avatar {
+  margin-left: 55px;
+  margin-top: 55px;
 }
 
 div {
@@ -121,7 +111,3 @@ width: 1250px;
 word-wrap: break-word;
 }
 
-.perf_profile {
-  padding-top: 20px; 
-  margin-top: 20px
-}

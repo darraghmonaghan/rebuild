@@ -18,12 +18,35 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+.main-pg-headline {
+  color: white !important; 
+  font-size: 100px !important;
+  letter-spacing: .07em;
+  font-weight: bold;
+}
 
+.main-pg-subhead {
+  color: black;
+  font-size: 45px;
+}
+
+.bio {
+  float: left;
+  padding-top: 55px;
+  font-size: 20px;
+}
+
+.bio-img {
+  float: left;
+  padding-right: 15px;
+  padding-bottom: 10px;
+}
 
 div#bs-example-navbar-collapse-1 {
   background-color: blue;
-  opacity:0.4;
+  opacity: 0.9;
   margin-bottom: 0px;
+  color: white;
 
 }
 
@@ -31,6 +54,7 @@ div.container-fluid {
   background-color: blue;
   opacity:0.4;
   margin-bottom: 0px;
+  color: white;
 }
 
 

@@ -1,28 +1,19 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Lisa Lehrman, Darragh Monaghan, Neil Rayos, Heather Stenson
 
-Things you may want to cover:
+ENCORE!
 
-* Ruby version
+When you're planning an event, you want to have the best entertainment options possible. But it can be difficult to connect with performers. Enter Encore! Encore allows users to connect with performers in their area. Performers can sign up with Encore and upload information about themselves and their act, as well as pictures and media. Users cannot see the performer's contact information unless they're signed in, which acts as an incentive for them to sign up for the service.
 
-* System dependencies
+A user who signs up is given the option to also sign up as a performer. If they choose this option, the user is redirected to the performer sign up form, where they can create their performer profile. A user's log-in information is the email address and password that they signed in with when creating their user account. Users who are also performers can check both profiles when signed in. 
 
-* Configuration
+Gems installed:
+* Paperclip - allows users to upload images
+* Bootstrap - for pretty styling
+* FriendlyId - for custom URLs
+* Ffaker - for seed data
 
-* Database creation
+Instructions:
+Run bundle to install all of the dependencies, then run rake db:create and rake db:migrate. If you wish to work with seed data, run rake db:seed. If you have not installed ImageMagick before, you will need to do so in order to work with Paperclip. 
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
