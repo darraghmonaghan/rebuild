@@ -28,7 +28,7 @@
 				<%= link_to "Login now to contact this performer!", "/sessions/new" %>
 			<% end %>
 
-			<%= button_to "Performer profile", performer_path(performer.id), method: "get", class: "btn btn-primary" %>
+			<%= button_to "Performer profile", performer_path(performer.slug), method: "get", class: "btn btn-primary" %>
 		</div>
 	</div>
 	<% end %>

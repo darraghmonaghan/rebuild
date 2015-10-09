@@ -9,7 +9,7 @@
             </div>
             <div class="col-xs-12 col-md-4">
                 <h2>Welcome, <%= @user.first_name %></h2>
-                <strong>Member since: </strong><%= @user.created_at.to_s(:due_date) %>
+                <strong>Member since: </strong><%= @user.created_at.strftime("%d %b. %Y") %>
             </div>
         <!-- col -->
         <!-- col -->

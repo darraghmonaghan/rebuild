@@ -37,7 +37,7 @@ class PerformersController < ApplicationController
     puts "PARAMS" , params.inspect
     @performer_id = params[:id]
     # puts "PERF ID: ", @performer_id
-    @performer = Performer.find(@performer_id)
+    @performer = Performer.friendly.find(@performer_id)
     # puts "PERF OBJECT: ", @performer.inspect
     # @user_id = @performer.user_id
     # puts "USER ID: ", @user_id
