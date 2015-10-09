@@ -18,6 +18,18 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+.main-pg-headline {
+  color: white !important; 
+  font-size: 100px !important;
+  letter-spacing: .07em;
+  font-weight: bold;
+}
+
+.main-pg-subhead {
+  color: black;
+  font-size: 45px;
+}
+
 .bio {
   float: left;
   padding-top: 55px;

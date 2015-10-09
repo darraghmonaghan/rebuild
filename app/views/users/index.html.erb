@@ -1,10 +1,13 @@
 
 <div class="jumbotron">
   <div class="container">
-  <h1>Find a performer near you</h1>
-  <p>The best local performers.</p>
+  <h1 class="text-center main-pg-headline">ENCORE</h1>
+  
+  <h3 class='text-center main-pg-subhead'>PERFECT PERFORMERS. PERFECT EVENTS.</h3>
   <!-- BIG SEARCH ALL BUTTON -->
- <%= button_to "Search All Perfomers", performers_path, method: :get, class: "btn btn-default btn-lg btn-block ghost-button" %>
+  <div class="text-center">
+    <%= button_to "Search All Perfomers", performers_path, method: :get, class: "btn btn-default text-center" %>
+  </div>
   </div>
 </div>
 
@@ -25,6 +28,9 @@
     <h3 class="hire-perfs">Hire Circus Acts.</h3>    
     <!-- BUTTON TO MUSCIAL ACTS  -->
     <%= link_to image_tag("https://i.warosu.org/data/cgl/img/0063/58/1351390622637.jpg", class: "perf"), "/categories/3" %>
+    <br>
+    <br>
+    <br>
   </div>
 
 </div>
