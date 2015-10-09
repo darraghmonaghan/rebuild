@@ -10,9 +10,9 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *
+ *= 
  *= require_self
- *= require_navbar.scss
+ *= 
  */
 
 @import "bootstrap-sprockets";
@@ -20,24 +20,23 @@
 
 
 
-div#bs-example-navbar-collapse-1 {
+.navbar navbar-default {
   background-color: white;
   opacity:0.4;
-  margin-bottom: 0px;
+  margin:0;
+  bottom: 70px;
+  position: absolute;
 
 }
 
 div.container-fluid {
   background-color: white;
-
   margin-bottom: 0px;
 }
-
 
 a.nav-text {
   color: black;
 }
-
 
 
 input.btn {
@@ -59,34 +58,22 @@ div.panel-body {
   width: 250px;
 }
 
-div.jumbotron {
+
+ .jumbotron {
   padding: 8.5em 8.6em;
-  
   background: #000 url("http://phillyprgirl.com/wp-content/uploads/2014/01/Concerts-in-Philadelphia.jpg") center center;
   background-size: cover;
   overflow: hidden;
-  margin-botton: 0;
+  margin-bottom: 0;
   margin-top: 0;
-
-
 }
 
-#footer {
-  margin-top: 55px;
-  
-}
 
 li {
   list-style: none;
 
 }
 
-.form-container {
-  width: 50%;
-  text-align: center;
-  margin-left: 25%;
-  padding-bottom: 10%;
-}
 
 .ghost-button {
   color: #009688;
@@ -114,8 +101,27 @@ margin: 3%;
 width: 230px;
   
 }
-.hire-perfs {
-color: #565a5c;
+
+footer.footer {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background-color: white;
+  margin-top: 50px;
+  color: #fff;
+  min-height: 100px;
+  display: block;
+}
+
+.footer-links {
+  color: #009688;
+  text-decoration: none;
+  font-family: 'Open Sans', sans-serif;
+}
+
+
+h1.site-brand {
+  color: white;
+  padding: 10px;
 }
 
 
