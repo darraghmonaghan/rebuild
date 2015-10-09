@@ -90,10 +90,12 @@ form-control title_input_field2 {
  display: inline-block;
  }
 
- .image-upload {
-  width: 70%;
-  margin: 0px;
- }
+ div.images {
+  width: 280px; 
+  display: block;
+  margin: 0 auto;
+  padding: 2px;
+}
 
  .media {
   display: inline;
@@ -126,6 +128,14 @@ form-control title_input_field2 {
   margin: 5%;
   color: #009688;
   font-family: 'Open Sans', sans-serif;
+ }
+
+ .fine-print {
+ width: 280px;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  padding: 2px;
  }
 
 

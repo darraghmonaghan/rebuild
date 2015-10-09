@@ -1,38 +1,39 @@
 
-<!-- <div class="container"> -->
-  <div class='row'>
-      <div class="jumbotron col-md-12">
-        <h1>Find a performer near you</h1>
-        <p>The best local performers.</p>
-        <button type="button" class="btn btn-default btn-lg btn-block"><%= link_to "Search All Perfomers", performers_path %></button>
-      </div>
+<div class="jumbotron">
+  <div class="container">
+  <h1>Find a performer near you</h1>
+  <p>The best local performers.</p>
+  <!-- BIG SEARCH ALL BUTTON -->
+ <%= button_to "Search All Perfomers", performers_path, {class: "btn btn-default btn-lg btn-block ghost-button"} %>
   </div>
+</div>
 
-
-  <div class='row'>
-
-      <div class="col-md-4">
-        <h3>Hire performers.</h3>
-        <div><img class="perf" src="http://i.cdn.talentegg.ca/incubator/wp-content/uploads/bourke3.jpg"></div>
-        <p>Make it memorable</p>
-        <button type="button" class="btn btn-sm btn-info"><%= link_to "Musical Acts", "/categories/1" %></button>  
-      </div>
-
-
-      <div class="col-md-4">
-          <h3>Do you love magic?</h3>
-          <div><img class="perf" src="http://www.neurosciencemarketing.com/blog/wp-content/uploads/2010/11/magician-cards.jpg"></div>
-          <p>Browse magicians and clowns near you.</p>
-          <button type="button" class="btn btn-sm btn-info"><%= link_to "Comedy Acts", "/categories/2" %></button> 
-      </div>
-
-
-      <div class="col-md-4">
-          <h3>Looking for a laugh?</h3>
-          <div><img class="perf" src="http://nickshell1983.files.wordpress.com/2011/01/stand-up-comedy-mic.jpg"></div>
-            <p>The funniest comics are at your event.</p>
-          <button type="button" class="btn btn-sm btn-info"><%= link_to "Circus Acts", "/categories/3" %></button> 
-      </div>
+<div class="container">
+<!-- row of columns -->
+  <div class="col-md-4">
+    <h3 class="hire-perfs">Hire performers.</h3>
+    <div><img class="perf" src="http://i.cdn.talentegg.ca/incubator/wp-content/uploads/bourke3.jpg">
     </div>
-  <br>
-<!-- </div> -->
+    <p>Make it memorable</p> 
+    <!-- BUTTON TO MUSCIAL ACTS  -->
+    <button type="button" class="btn btn-sm btn-info ghost-button"><%= link_to "Musical Acts", "/categories/1" %></button> 
+  </div>
+<!-- row of columns -->
+<div class="col-md-4">
+    <h3 class="hire-perfs">Do you love magic?</h3>
+    <div><img class="perf" src="http://www.neurosciencemarketing.com/blog/wp-content/uploads/2010/11/magician-cards.jpg">
+    </div>
+      <p>Browse magicians and clowns near you.</p>
+      <!-- BUTTON TO MAGIC/COMEDY ACTS -->
+      <button type="button" class="btn btn-sm btn-info ghost-button"><%= link_to "Comedy Acts", "/categories/2" %></button> 
+      </div>
+    <!-- row of columns -->
+<div class="col-md-4">
+    <h3 class="hire-perfs">Looking for a laugh?</h3>
+    <div><img class="perf" src="http://nickshell1983.files.wordpress.com/2011/01/stand-up-comedy-mic.jpg">
+    </div>
+      <p>The funniest comics are at your event.</p>
+      <button type="button" class="btn btn-sm btn-info ghost-button"><%= link_to "Circus Acts", "/categories/3" %></button> 
+    </div>
+</div>
+
