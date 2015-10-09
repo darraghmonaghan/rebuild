@@ -7,15 +7,19 @@
       <div id="content" class="col-xs-9">
         <div class="form-container">
         
-            <h2 class="form-signin-heading">Login </h2>
+            <h2 class="form-signin-heading">User Signup</h2>
             <%= form_for @user do |f| %> 
         
             <%= f.email_field :email, placeholder: 'Email', class: "users-new-input", required: true %></br>
             <%= f.text_field :first_name, placeholder: 'First Name', class: "users-new-input", required: true %></br>
             <%= f.text_field :last_name, placeholder: 'Last Name', class: "users-new-input", required: true %><br>
-            <%= f.password_field :password, placeholder: 'Password', class: "users-new-input", required: true %><br>
+            <%= f.password_field :password, placeholder: 'Password', class: "users-new-input", required: true %></br>
+            <small>Upload an avatar picture</small></br>
             <%= f.file_field :avatar, class: "users-new-input" %></br>
-            <small>Tick box if you are a performer</small><%= f.check_box(:performer) %></br>
+          <div class="fine-print">
+            <small><strong>Want to be a performer?</strong></br> Tick the box once you've completed the form to go to the performer signup page.</small>
+          </div>
+            <%= f.check_box(:performer) %></br>
             <%= f.submit "Signup!", class: "ghost-button" %>
               <% end %>
              </div>
