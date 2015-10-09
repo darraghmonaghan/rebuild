@@ -1,5 +1,10 @@
 <div class="container">
-	<h1>View All Performers</h1>
+
+	<div class='row'>
+		<div class='col-md-2'></div>
+		<h3 class='col-md-8' align='center'>Options to bring every event to life!</h3>
+		<div class='col-md-2'></div>
+	</div><br>
 
 	<% @performers.each do |performer| %>
 	<div class='row panel panel-default'>
@@ -7,7 +12,7 @@
 			<%= image_tag(performer.perfavatar, id: "cat_show_avatar") %>
 		</div>
 		<div class='col-sm-10 col-md-8'>
-			<h2> <%= performer.performer_name %></h2>
+			<h3> <%= link_to performer.performer_name, performer_path(performer.slug) %></h3>
 			<strong>City:</strong> <%= performer.city %><br>
 			<strong>Category:</strong>
 
@@ -25,10 +30,11 @@
 			<% if current_user %>
 				<strong>Performers Contact: </strong><%= performer.performer_email %><br>
 			<% else %>
-				<%= link_to "Login now to contact this performer!", "/sessions/new" %>
+				<strong><%= link_to "Login now to contact this performer!", "/sessions/new" %></strong>
+				<br>
+				<br>
 			<% end %>
-
-			<%= button_to "Performer profile", performer_path(performer.slug), method: "get", class: "btn btn-primary" %>
+			
 		</div>
 	</div>
 	<% end %>

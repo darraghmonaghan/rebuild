@@ -4,36 +4,27 @@
   <h1>Find a performer near you</h1>
   <p>The best local performers.</p>
   <!-- BIG SEARCH ALL BUTTON -->
- <%= button_to "Search All Perfomers", performers_path, :class => "btn btn-default btn-lg btn-block ghost-button", method: :get %>
+ <%= button_to "Search All Perfomers", performers_path, method: :get, class: "btn btn-default btn-lg btn-block ghost-button" %>
   </div>
 </div>
 
 <div class="container">
 <!-- row of columns -->
   <div class="col-md-4">
-    <h3 class="hire-perfs">Hire performers.</h3>
-    <div><img class="perf" src="http://i.cdn.talentegg.ca/incubator/wp-content/uploads/bourke3.jpg">
-    </div>
-    <p>Make it memorable</p> 
+    <h3 class="hire-perfs">Hire Musical Acts.</h3>    
     <!-- BUTTON TO MUSCIAL ACTS  -->
-    <button type="button" class="btn btn-sm btn-info ghost-button"><%= link_to "Musical Acts", "/categories/1" %></button> 
+    <%= link_to image_tag("http://www.eurovision.tv/save-files/resizes/8c/36/a0/49/c5/0d/cf/81/c7/e8/3c/fa/4c/09/a6/5e/TH4_41.jpg", class: "perf"), "/categories/1" %>
   </div>
 <!-- row of columns -->
-<div class="col-md-4">
-    <h3 class="hire-perfs">Do you love magic?</h3>
-    <div><img class="perf" src="http://www.neurosciencemarketing.com/blog/wp-content/uploads/2010/11/magician-cards.jpg">
-    </div>
-      <p>Browse magicians and clowns near you.</p>
-      <!-- BUTTON TO MAGIC/COMEDY ACTS -->
-      <button type="button" class="btn btn-sm btn-info ghost-button"><%= link_to "Comedy Acts", "/categories/2" %></button> 
-      </div>
-    <!-- row of columns -->
-<div class="col-md-4">
-    <h3 class="hire-perfs">Looking for a laugh?</h3>
-    <div><img class="perf" src="http://nickshell1983.files.wordpress.com/2011/01/stand-up-comedy-mic.jpg">
-    </div>
-      <p>The funniest comics are at your event.</p>
-      <button type="button" class="btn btn-sm btn-info ghost-button"><%= link_to "Circus Acts", "/categories/3" %></button> 
-    </div>
-</div>
+  <div class="col-md-4">
+    <h3 class="hire-perfs">Hire Magical Acts.</h3>    
+    <!-- BUTTON TO MUSCIAL ACTS  -->
+    <%= link_to image_tag("http://www.magicbymio.com/wp-content/uploads/2015/07/Cards.jpg", class: "perf"), "/categories/2" %>
+  </div>    <!-- row of columns -->
+  <div class="col-md-4">
+    <h3 class="hire-perfs">Hire Circus Acts.</h3>    
+    <!-- BUTTON TO MUSCIAL ACTS  -->
+    <%= link_to image_tag("https://i.warosu.org/data/cgl/img/0063/58/1351390622637.jpg", class: "perf"), "/categories/3" %>
+  </div>
 
+</div>

@@ -1,46 +1,47 @@
-<div class="container">
-  <!-- logged in logic - needs help -->
-  <div>
-    <% if correct_user(@performer) %>
-      <%= button_to "Edit Profile", edit_performer_path, method: :get %>
-      <%= button_to "Delete", performer_path, method: :delete %>
-    <% end %>
-  </div>
-  <!-- end logged in logic -->
+<div class="profile container">
+  <div class="row">
+    <div class="col-md-10 col-xs-10">
+      <div class="well panel panel-default">
+        <div class="panel-body">
+          <div class="row">
+            <div class='row panel panel-default'>
+              <div class='col-sm-10 col-md-3'>
+                  <div class='row'>
+                      <div class="col-md-3"></div>
+                      <div class='col-md-6'><%= image_tag(@performer.perfavatar, class: "perf_profile", id: "cat_show_avatar") %></div>
+                      <div class="col-md-3"></div>
+                  </div>
+              </div>
 
+              <div class='col-sm-10 col-md-7'>
+                <h2><%= @performer.performer_name %></h2>
+                <h3><%= @performer.city %></h3>
+                <strong>Category:</strong> <%= @category.category %> - <%= @performer.subcategory %><br>
+                <strong>Hourly Rate:</strong> <%= @performer.hourly_rate %><br>
+                <strong>Description:</strong> <%= @performer.description %><br>
 
-  <div class='row panel panel-default'>
-    <div class='col-sm-10 col-md-4'>
-        <%= image_tag(@performer.perfavatar, id: "cat_show_avatar") %>
-    </div>
+                <% if current_user %>
+                      <br><strong>Email this user and get the conversation started!    </strong><a href="mailto:<%= @performer.performer_email %>"><%= @performer.performer_email %></a><br>  
+                <% else %>
+                      <br><p><strong><%= link_to "Sign In to See This Performer Email!", sessions_new_path %></strong></p><br>
+                <% end %>
+                <br>
+              </div> 
 
-    <div class='col-sm-10 col-md-8'>
-      <h1><%= @performer.performer_name %></h1>
-      <h3><%= @performer.city %></h3>
-      <strong>Category:</strong> <%= @category.category %> - <%= @performer.subcategory %><br>
-      <strong>Hourly Rate:</strong> <%= @performer.hourly_rate %><br>
-      <strong>Description:</strong> <%= @performer.description %><br>
+                <!-- logged in logic - needs help -->
+                <div class="col-sm-10 col-md-2">
+                  <% if current_user %>
+                    <% if @performer.user_id == current_user.id %>
+                      <%= button_to "Edit Profile", edit_performer_path, method: :get, class: "btn btn-info" %>
+                      <%= button_to "Delete", performer_path, method: :delete, class: "btn btn-danger" %>
+                    <% end %>
+                  <% end %>
+                </div>
+                <!-- end logged in logic -->
+              </div>
+          </div>
 
-      <% if current_user %>
-            <br><strong>Email this user and get the conversation started!    </strong><a href="mailto:<%= @performer.performer_email %>"><%= @performer.performer_email %></a><br>  
-      <% else %>
-            <br><p><strong><%= link_to "Sign In to See This Performer Email!", sessions_new_path %></strong></p><br>
-      <% end %>
-    </div> 
-
-      <!-- logged in logic - needs help -->
-      <div>
-        <% if current_user %>
-          <% if @performer.user_id == current_user.id %>
-            <%= button_to "Edit Profile", edit_performer_path, method: :get, class: "btn btn-info" %>
-            <%= button_to "Delete", performer_path, method: :delete, class: "btn btn-danger" %>
-          <% end %>
-        <% end %>
-      </div>
-      <!-- end logged in logic -->
-
-  </div>
-  <!-- end user bio div --> 
+           <!-- end user bio div --> 
   <div class='row'>
     <div id="performer-img" class="carousel slide col-md-5" data-ride="carousel">
      <!-- Indicators -->
@@ -114,5 +115,14 @@
        </a>
       </div>
   </div>
+
+        </div>
+      </div> 
+    </div> 
+  </div>
+</div>    
+
+
+  
+ 
 	
-</div>
