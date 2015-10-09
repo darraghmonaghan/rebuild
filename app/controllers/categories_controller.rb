@@ -4,7 +4,7 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    @category = Category.find_by({id: params[:id]})
+    @category = Category.friendly.find_by({id: params[:id]})
     @performer = Performer.order(created_at: :desc).where(["category_id = #{@category.id}"])
   end
 end
