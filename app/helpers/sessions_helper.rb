@@ -11,18 +11,25 @@ module SessionsHelper
     end
   end
 
+  def signed_in?
+    if current_user == nil
+      return false
+    else
+      return true
+    end
+  end
+
   def destroy
     @current_user = session[:user_id] = nil
   end
 
-  def correct_user(performer)
-    puts "PERFORMER: " , @performer.inspect
-    # if current_user.id == @performer.user_id
-    #   return true 
-    # else 
-    #   return false
-    # end
-  end
+  # def correct_user(performer)
+  #   if current_user.id == @performer.user_id
+  #     return true 
+  #   else 
+  #     return false
+  #   end
+  # end
 
   private
   def current_user 
