@@ -25,8 +25,8 @@ class PerformersController < ApplicationController
   #   # need to connect user's performer_id and the performer id fields
   #   @performer = Performer.find_by_id(params[:id]) #this line should be finding the performer by the performer id
 
-  #   category_id = @performer.category_id #should be finding the performer's category id
-  #   @category = Category.find_by_id(category_id) #should be querying the cat. database using category_id
+  #    #should be finding the performer's category id
+  #    #should be querying the cat. database using category_id
 
   #   @user = User.find_by_id(@performer.user_id) #should be finding the user id by the performer_id
   #   @video1 = @performer.video1 #finding the first video for the performer
@@ -34,10 +34,11 @@ class PerformersController < ApplicationController
 
 
   def show
-    puts "PARAMS" , params.inspect
     @performer_id = params[:id]
-    # puts "PERF ID: ", @performer_id
     @performer = Performer.find(@performer_id)
+    category_id = @performer.category_id
+    @user = User.find_by_id(@performer.user_id)
+    @category = Category.find_by_id(category_id)
     # puts "PERF OBJECT: ", @performer.inspect
     # @user_id = @performer.user_id
     # puts "USER ID: ", @user_id
