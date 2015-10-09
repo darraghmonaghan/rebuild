@@ -35,7 +35,7 @@ class PerformersController < ApplicationController
 
   def show
     @performer_id = params[:id]
-    @performer = Performer.find(@performer_id)
+    @performer = Performer.friendly.find(@performer_id)
     category_id = @performer.category_id
     @user = User.find_by_id(@performer.user_id)
     @category = Category.find_by_id(category_id)

@@ -16,5 +16,7 @@ class Performer < ActiveRecord::Base
 
      scope :category_id, -> (category_id) {where category_id: category_id }
      
+     extend FriendlyId
+     friendly_id :performer_name, use: [:slugged, :finders]
 
 end
