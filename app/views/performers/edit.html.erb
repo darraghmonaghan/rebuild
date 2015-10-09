@@ -1,49 +1,65 @@
-<%= stylesheet_link_tag "performers" %>
+<div class="container">
+<h1 class="edit-performer-header">Edit Your Profile</h1>
 
-<div class="container edit-perf-container">
-<h1 class="edit-performer-header">Edit Performer Profile</h1>
+<div class="col-md-8">
 
+      <%= form_for @performer do |f| %>
+      <div class="form-group">
+        <%= f.text_field :performer_name, placeholder: "Your name or group name", class: "form-control" %>
+      </div>
+    
+      <div class="form-group">
+        <%= f.email_field :performer_email, placeholder: "Your business email address", class: "form-control" %>
+      </div>
+      
+      <div class="form-group">
+        <%= f.text_field :city, placeholder: "Where are you?", class: "form-control" %>
+      </div>
+      
+      <div class="form-group">
+        <%= f.text_field :subcategory, placeholder: "Your act type",  class: "form-control" %>
+      </div>
+        
+      <div class="form-group">
+        <%= f.text_area :description, placeholder: "Describe your act for us! Min. 30, max. 500 characters.", required: true, cols: 100, rows: 4 %>
+      </div>
+        
+    <div class="form-group">
+      <%= f.select :category_id, [['Musical Act', 1], ['Comedy Act', 2], ['Circus Act', 3]] %>
 
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In non posuere nisi. Vivamus ut ipsum dolor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Fusce tortor odio, mattis in nunc non, ornare varius enim. Aenean ultricies ante suscipit eros scelerisque, nec rhoncus sem tempor.</p>
+      <%= f.select :hourly_rate, [['$1-25 per hour', '$1-25 per hour'], ['$26-50 per hour', '$26-50 per hour'], ['$51-75 per hour', '$51-75 per hour'], ['$76-100 per hour', '$76-100 per hour'], ['$101-150 per hour', '$101-150 per hour']] %>
+    </div>
 
-<%= form_for @performer do |f| %>
-
-    <%= f.text_field :performer_name, placeholder: "Your name or group name", class: "users-new-input", required: true %></br>
- 
-    <%= f.email_field :performer_email, placeholder: "Your email address", class: "users-new-input", required: true %></br>
- 
-    <%= f.password_field :password, placeholder: "Password", class: "users-new-input", required: true %></br>
-  
-    <%= f.text_field :city, placeholder: "Where are you?", class: "users-new-input", required: true %></br>
-    <%= f.text_field :subcategory, placeholder: "Your act type", class: "users-new-input",  required: true %></br>
- 
-  <div class="drop-downs">
-    <!-- I've put some this information in the seeds.rb file as well - HS -->
-    <%= f.select :category_id, [['Musical Act', 1], ['Comedy Act', 2], ['Circus Act', 3]], required: true, class: "dropdown-menu" %></br>
-  
-    <%= f.select :hourly_rate, [['$1-25 per hour', '$1-25 per hour'], ['$26-50 per hour', '$26-50 per hour'], ['$51-75 per hour', '$51-75 per hour'], ['$76-100 per hour', '$76-100 per hour'], ['$101-150 per hour', '$101-150 per hour']], required: true %>
-  </div>
- 
-    <%= f.text_area :description, placeholder: "Describe your act for us! Max 500 characters.", required: true, cols: 50, rows: 6, class: "users-new-input" %>
-
-  <div class="images">
-    <%= f.file_field :image1, class: "users-new-input" %>
- 
-    <%= f.file_field :image2, class: "users-new-input" %>
- 
-    <%= f.file_field :image3, class: "users-new-input"  %>
-  </div>
-
-  <div class="youtube">
-    <%= f.text_field :video1, placeholder: "Enter a URL link from YouTube", class: "users-new-input" %></br>
- 
-    <%= f.text_field :video2, placeholder: "Enter a URL link from YouTube", class: "users-new-input"  %></br>
-
-    <%= f.text_field :video3, placeholder: "Enter a URL link from YouTube", class: "users-new-input" %></br>
-  </div>
+      <div class="form-group">
+        <%= f.file_field :perfavatar, class: "form-control" %>
+        <p class="help-block">Upload your performer avatar.</p>
+      </div>
+      <div class="form-group">
+        <%= f.file_field :image1, class: "form-control" %>
+        <p class="help-block">Upload your first user image.</p>
+      </div>
+      <div class="form-group">
+        <%= f.file_field :image2, class: "form-control" %>
+        <p class="help-block">Upload your second user image.</p>
+      </div>  
+      <div class="form-group">
+        <%= f.file_field :image3, class: "form-control" %>
+        <p class="help-block">Upload your third user image.</p>
+      </div>
+        
+      <div class="form-group">
+        <%= f.text_field :video1, placeholder: "Enter a URL link from YouTube", class: "form-control" %>
+      </div>  
+      <div class="form-group">
+        <%= f.text_field :video2, placeholder: "Enter a URL link from YouTube", class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <%= f.text_field :video3, placeholder: "Enter a URL link from YouTube", class: "form-control" %>
+      </div>  
 
 
     <%= f.submit "Edit", class: "ghost-button" %>
 
 </div>
 <% end %>
+</div>
