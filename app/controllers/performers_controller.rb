@@ -1,3 +1,7 @@
+# TODO: please remove commented out code from deployment version - JC
+
+# TODO: check out the sitch with photos loading.
+# TODO: clean up the layout for the media
 class PerformersController < ApplicationController
   def index
     @performers = Performer.all
@@ -34,6 +38,7 @@ class PerformersController < ApplicationController
 
 
   def show
+    # TODO: please remove terminal logging from deployment version - JC
     puts "PARAMS" , params.inspect
     @performer_id = params[:id]
     # puts "PERF ID: ", @performer_id
@@ -70,7 +75,7 @@ class PerformersController < ApplicationController
     end
 
   def update
-      @performer = Performer.find(params[:id])    
+      @performer = Performer.find(params[:id])
           if @performer.update(performer_params)
             redirect_to performer_path(@performer)
           else
@@ -82,7 +87,7 @@ class PerformersController < ApplicationController
     if current_user.id  == @performer.user_id
       id = params[:id]
       performer = Performer.find(id)
-      performer.destroy  
+      performer.destroy
     else
       redirect_to root_path
   end
@@ -90,7 +95,7 @@ class PerformersController < ApplicationController
   end
 
   private
-
+  # TODO: please pat yourself on the back for keeping your performers safe - JC
   def performer_params
     params.require(:performer).permit(:user_id, :performer_name, :performer_email, :city, :category_id, :subcategory, :hourly_rate, :description, :perfavatar, :image1, :image2, :image3, :video1, :video2, :video3)
   end

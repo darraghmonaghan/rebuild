@@ -21,15 +21,15 @@ class SessionsController < ApplicationController
   end
 
   #################################################
- 
+
 private
 
   def performer_params
-    params.require(:performer).permit(:email, :password)  
+    params.require(:performer).permit(:email, :password)
   end
 
   def user_params
-    params.require(:user).permit(:email, :password)  
+    params.require(:user).permit(:email, :password)
   end
 
 

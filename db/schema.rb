@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 20151007224742) do
     t.datetime "updated_at",              null: false
     t.string   "performer_name"
     t.integer  "user_id"
+    # TODO: array of array
     t.string   "image1_file_name"
     t.string   "image1_content_type"
     t.integer  "image1_file_size"
@@ -45,9 +46,11 @@ ActiveRecord::Schema.define(version: 20151007224742) do
     t.string   "image3_content_type"
     t.integer  "image3_file_size"
     t.datetime "image3_updated_at"
+    # TODO: array
     t.string   "video1"
     t.string   "video2"
     t.string   "video3"
+    # TODO: array
     t.string   "perfavatar_file_name"
     t.string   "perfavatar_content_type"
     t.integer  "perfavatar_file_size"

@@ -6,8 +6,8 @@ class UsersController < ApplicationController
   end
 
   def show
+    # TODO: make use of your nice id var below - JC
       id = params[:id]
-
       @user = User.find(params[:id])
       if current_user.id == @user.id
         render :show
@@ -49,6 +49,7 @@ class UsersController < ApplicationController
       user_id = params[:id]
       user = User.find(user_id)
       # get updated data
+      # TODO: please use your user_params function here - JC
       updated_attributes = params.require(:user).permit(:first_name, :last_name, :email, :password, :avatar)
 
       # update the client_
@@ -58,8 +59,9 @@ class UsersController < ApplicationController
       redirect_to "/users/#{user.id}"  # <-- go to show
     end
 
+    # TODO: breaks the server :( Couldn't navigate site after I deleted account - JC
   def destroy
-     id = params[:id]
+    id = params[:id]
     user = User.find(id)
     user.destroy
     redirect_to root_path
@@ -68,7 +70,7 @@ class UsersController < ApplicationController
 private
 
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :email, :password, :performer, :avatar)  
+    params.require(:user).permit(:first_name, :last_name, :email, :password, :performer, :avatar)
   end
 
 
